@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎮 Tienda de Videojuegos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>🎮 Tienda de Videojuegos</h1>
+                <p>Catálogo digital de venta de videojuegos</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Sección de Agregar Videojuego -->
+            <section class="add-section">
+                <h2>➕ Agregar Nuevo Videojuego</h2>
+                <form id="addForm" class="form">
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="genero">Género:</label>
+                        <input type="text" id="genero" name="genero" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="plataforma">Plataforma:</label>
+                        <input type="text" id="plataforma" name="plataforma" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="precio">Precio ($):</label>
+                        <input type="number" id="precio" name="precio" step="0.01" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Agregar Videojuego</button>
+                </form>
+                <div id="mensaje" class="mensaje"></div>
+            </section>
+
+            <!-- Sección de Búsqueda -->
+            <section class="search-section">
+                <h2>🔍 Buscar Videojuegos</h2>
+                <div class="search-container">
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        placeholder="Buscar por nombre, género o plataforma..."
+                        class="search-input"
+                    >
+                </div>
+            </section>
+
+            <!-- Sección de Listado de Videojuegos -->
+            <section class="list-section">
+                <h2>📚 Catálogo de Videojuegos</h2>
+                <div id="loadingSpinner" class="loading">Cargando videojuegos...</div>
+                <div id="gamesList" class="games-grid">
+                    <!-- Los videojuegos se cargarán aquí -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2026 Tienda de Videojuegos | Examen Diagnóstico Desarrollo Web</p>
+        </footer>
+    </div>
+
+    <!-- Modal para editar -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>✏️ Editar Videojuego</h2>
+            <form id="editForm" class="form">
+                <input type="hidden" id="editId">
+                <div class="form-group">
+                    <label for="editNombre">Nombre:</label>
+                    <input type="text" id="editNombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="editGenero">Género:</label>
+                    <input type="text" id="editGenero" name="genero" required>
+                </div>
+                <div class="form-group">
+                    <label for="editPlataforma">Plataforma:</label>
+                    <input type="text" id="editPlataforma" name="plataforma" required>
+                </div>
+                <div class="form-group">
+                    <label for="editPrecio">Precio ($):</label>
+                    <input type="number" id="editPrecio" name="precio" step="0.01" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
